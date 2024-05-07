@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "99601064732",
+    "project_id": "threads-f8aec",
+    "storage_bucket": "threads-f8aec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:99601064732:android:c1dc143459671a0220d0d9",
+        "android_client_info": {
+          "package_name": "com.example.threads"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbL4FXia5nynJJ7EQdlSutU8XGIc7Anl0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
