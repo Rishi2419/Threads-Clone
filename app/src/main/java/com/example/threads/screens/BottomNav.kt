@@ -47,6 +47,7 @@ fun BottomNav(navHostController: NavHostController) {
         NavHost(navController = navController1, startDestination = Routes.Home.routes,
             modifier = Modifier.padding(innerPadding)){
 
+            // Used during build time
             composable(Routes.Splash.routes){
                 Splash(navController1)
             }
@@ -246,7 +247,13 @@ fun MyBottomBar(navController1: NavHostController) {
 
                     .pointerInput(Unit) {
                         detectTapGestures { offset ->
+                            // navigate if tapped
+                            //used in runtime
+//                            popUpTo: Ensures the navigation clears the back stack up to the starting destination
+//                            saveState = true: Saves the current state of the screen so you can restore it if you navigate back.
+//                            launchSingleTop = true: Ensures that if you’re already on the destination screen and you tap the same tab again, a new instance of the screen is not created
                             navController1.navigate(item.route) {
+                                //backstack
                                 popUpTo(navController1.graph.findStartDestination().id) {
                                     saveState = true
                                 }

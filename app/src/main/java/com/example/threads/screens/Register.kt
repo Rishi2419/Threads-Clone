@@ -81,17 +81,20 @@ fun Register(navHostController: NavHostController){
     }
 
 
+    // firebaseUser Livedata
     val authViewModel : AuthViewModel = viewModel()
     val firebaseUser by authViewModel.firebaseUser.observeAsState(null)
-    //Launcher for selecting img
 
+
+    // Permission Handling
+    // if Android 13+ than READ_MEDIA_IMAGES else READ_EXTERNAL_STORAGE
     val permissionToRequest = if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.TIRAMISU){
         android.Manifest.permission.READ_MEDIA_IMAGES
     }else android.Manifest.permission.READ_EXTERNAL_STORAGE
 
     val context = LocalContext.current
 
-
+    //Launching the Image Picker
     val launcher = rememberLauncherForActivityResult(contract = ActivityResultContracts.GetContent()){
         uri : Uri? ->
         imageUri = uri
@@ -102,9 +105,9 @@ fun Register(navHostController: NavHostController){
 
             isGranted : Boolean ->
             if (isGranted){
-
+                Toast.makeText(context, "Permission granted", Toast.LENGTH_SHORT).show()
             }else{
-
+                Toast.makeText(context, "Permission denied", Toast.LENGTH_SHORT).show()
             }
     }
     
@@ -143,8 +146,14 @@ fun Register(navHostController: NavHostController){
         Box(modifier = Modifier.height(40.dp))
 
 
-        Image(painter = if (imageUri == null)painterResource(id = R.drawable.person)
-            else rememberAsyncImagePainter(model = imageUri),
+        Image(painter = if (imageUri == null){
+            painterResource(id = R.drawable.person)
+        }
+            else {
+                //Coil dependency
+                //earlier we used glide picasso
+                rememberAsyncImagePainter(model = imageUri)
+        },
             contentDescription = "person",
              modifier = Modifier
                  .size(120.dp)

@@ -69,6 +69,7 @@ fun Login(navHostController: NavHostController) {
         Toast.makeText(context,it,Toast.LENGTH_SHORT).show()
     }
 
+    //Input field code from documentation
     var email by remember {
         mutableStateOf("")
     }
@@ -83,8 +84,8 @@ fun Login(navHostController: NavHostController) {
             .background(Color(0xFF0A0A0A))
     ) {
         Image(
-            painter = painterResource(id = R.drawable.bg2), // Assuming bg.jpg is in the drawable folder
-            contentDescription = null, // Content description is null for decorative images
+            painter = painterResource(id = R.drawable.bg2),
+            contentDescription = null,
             modifier = Modifier.fillMaxSize(),
             alignment = Alignment.TopCenter
         )

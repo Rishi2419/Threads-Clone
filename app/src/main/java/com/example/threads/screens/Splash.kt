@@ -102,8 +102,11 @@ fun Splash(navController: NavHostController){
 //
 //        }
         if (FirebaseAuth.getInstance().currentUser != null) {
+            //takes to home screen
             navController.navigate(Routes.BottomNav.routes) {
+            // clears all backstack
                 popUpTo(navController.graph.startDestinationId){
+             //Splash screen is removed
                     inclusive = true
                 }
             }

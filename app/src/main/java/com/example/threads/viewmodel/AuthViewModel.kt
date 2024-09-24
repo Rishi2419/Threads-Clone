@@ -2,6 +2,7 @@ package com.example.threads.viewmodel
 
 import android.content.Context
 import android.net.Uri
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -41,7 +42,10 @@ class AuthViewModel: ViewModel() {
         auth.signInWithEmailAndPassword(email,password)
             .addOnCompleteListener {
                 if (it.isSuccessful){
+                    //get data of registered user
                     getData(auth.currentUser!!.uid, context)
+                    //navigate to home
+                    //update the livedata holding the authenticated user
                     _firebaseUser.postValue(auth.currentUser)
                 }
                 else{
@@ -116,9 +120,9 @@ class AuthViewModel: ViewModel() {
         userRef.child(uid!!).setValue(userData)
             .addOnSuccessListener {
                 SharedPref.storeData(name,email,bio,userName,toString,context)
-
+                Toast.makeText(context,"Account created",Toast.LENGTH_SHORT).show()
             }.addOnFailureListener {
-
+                Toast.makeText(context, "Something went wrong, try again later", Toast.LENGTH_SHORT).show()
             }
 
     }

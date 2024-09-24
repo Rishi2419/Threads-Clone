@@ -79,7 +79,9 @@ fun AddThreads(navHostController: NavHostController) {
     }else android.Manifest.permission.READ_EXTERNAL_STORAGE
 
 
-    var isPosting by remember { mutableStateOf(false) }
+    var isPosting by remember {
+        mutableStateOf(false)
+    }
 
     val launcher = rememberLauncherForActivityResult(contract = ActivityResultContracts.GetContent()){
             uri : Uri? ->
@@ -157,7 +159,7 @@ fun AddThreads(navHostController: NavHostController) {
             start.linkTo(parent.start)
             end.linkTo(parent.end)
         }
-            .padding(top = 60.dp),color = Color.DarkGray, thickness = 0.3.dp)
+            .padding(top = 60.dp),color = Color.DarkGray, thickness = 0.4.dp)
 
         Image(painter = rememberAsyncImagePainter(model = SharedPref.getImage(context)),
             contentDescription = "logo",
@@ -284,12 +286,17 @@ fun AddThreads(navHostController: NavHostController) {
             TextButton(onClick = {
 
 
-                isPosting = true
-                if (imageUri == null){
-                    threadViewModel.saveData(thread,FirebaseAuth.getInstance().currentUser!!.uid, "")
+                if (thread.isEmpty() && imageUri == null){
+                    Toast.makeText(context,"No threads or media attached",Toast.LENGTH_SHORT).show()
                 }else{
-                    threadViewModel.saveImage(thread,FirebaseAuth.getInstance().currentUser!!.uid,imageUri!!)
+                    isPosting = true
+                    if (imageUri == null){
+                        threadViewModel.saveData(thread,FirebaseAuth.getInstance().currentUser!!.uid, "")
+                    }else{
+                        threadViewModel.saveImage(thread,FirebaseAuth.getInstance().currentUser!!.uid,imageUri!!)
+                    }
                 }
+
 
 
             }, modifier = Modifier.constrainAs(button){

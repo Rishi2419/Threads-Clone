@@ -46,6 +46,7 @@ class HomeViewModel: ViewModel() {
                     thread.let {
                         fetchUserFromThread(it!!){
                            user ->
+                            //0 because latest should be on top
                             result.add(0,it to user)
 
                             if (result.size == snapshot.childrenCount.toInt()){
@@ -70,6 +71,7 @@ class HomeViewModel: ViewModel() {
                 override fun onDataChange(snapshot: DataSnapshot) {
 
                     val user = snapshot.getValue(UserModel::class.java)
+                    // the user gets store in onResult
                     user?.let(onResult)
                 }
 
