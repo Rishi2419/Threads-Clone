@@ -52,3 +52,9 @@ dependencies {<br>
 Create a Firebase project in the Firebase console.<br>
 Add your Android app to the Firebase project.<br>
 Download the google-services.json file and place it in the app/ directory of your project.<br>
+
+
+### For a visual walkthrough of Threads functionalities, check out the demo video here:
+https://www.linkedin.com/posts/rishikesh-sahu-error_androiddevelopment-kotlin-jetpackcompose-activity-7230920596262420480-q8Ik?utm_source=share&utm_medium=member_desktop
+
+
