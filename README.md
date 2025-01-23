@@ -36,17 +36,17 @@ git clone https://github.com/Rishi2419/Threads-Clone/tree/main
 
 ### Set up the development environment:
 
-Install Android Studio: Download and install the latest version of Android Studio.
+Install Android Studio: Download and install the latest version of Android Studio.<br>
 Install Firebase dependencies: Add the necessary Firebase dependencies to your build.gradle file:
 
 Gradle
 
-dependencies {
-    // ... other dependencies
-    implementation 'com.google.firebase:firebase-auth-ktx'
-    implementation 'com.google.firebase:firebase-firestore-ktx'
-    // ... other dependencies
-}
+dependencies {<br>
+    // ... other dependencies<br>
+    implementation 'com.google.firebase:firebase-auth-ktx'<br>
+    implementation 'com.google.firebase:firebase-firestore-ktx'<br>
+    // ... other dependencies<br>
+}<br>
 
 ### Connect to Firebase:
 Create a Firebase project in the Firebase console.
