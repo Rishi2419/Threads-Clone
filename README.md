@@ -49,6 +49,6 @@ dependencies {<br>
 }<br>
 
 ### Connect to Firebase:
-Create a Firebase project in the Firebase console.
-Add your Android app to the Firebase project.
-Download the google-services.json file and place it in the app/ directory of your project.   
+Create a Firebase project in the Firebase console.<br>
+Add your Android app to the Firebase project.<br>
+Download the google-services.json file and place it in the app/ directory of your project.<br>
