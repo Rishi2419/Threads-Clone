@@ -1,10 +1,10 @@
 # Threads Clone
 This project is a clone of Threads by Instagram, a social media app built for Android using the following technologies:
 
-Kotlin: A modern, concise, and safe programming language for Android development.
-Jetpack Compose: A modern toolkit for building native UI on Android.
-Firebase: A suite of tools for app development, including Firebase Authentication, Firestore, and Cloud Messaging.
-Android Studio: The official IDE for Android development.
+* **Kotlin:** A modern, concise, and safe programming language for Android development.
+* **Jetpack Compose:** A modern toolkit for building native UI on Android.
+* **Firebase:** A suite of tools for app development, including Firebase Authentication, Firestore, and Cloud Messaging.
+* **Android Studio:** The official IDE for Android development.
 
 ## Features:
 
@@ -32,7 +32,7 @@ Real-time updates for new threads, comments, and followers using Firebase.
 ### Clone the repository:
 
 Bash
-git clone <repository_url>
+git clone https://github.com/Rishi2419/Threads-Clone/tree/main
 
 ### Set up the development environment:
 
